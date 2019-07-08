@@ -8,6 +8,16 @@ import static Sorts.SortUtils.*;
  * @see SortAlgorithm
  */
 
+/**
+ * @author Dc
+ * 冒泡排序
+ * 从头遍历取最大(小)值进行调换位置，
+ * 遍历一次找出一个最大 (小)值放在末尾，重复以上步骤
+ *
+ *  do while：效率高，循环次数少
+ *  for for： 外部for循环length-1次
+ *
+ */
 class BubbleSort implements SortAlgorithm {
     /**
      * This method implements the Generic Bubble Sort
@@ -33,6 +43,19 @@ class BubbleSort implements SortAlgorithm {
         return array;
     }
 
+    private void sortDoubleFor(Integer[] array) {
+
+        for (int j = 0; j < array.length - 1; j++) {
+            for (int k = 0; k < array.length - 1 - j; k++) {
+                if (array[k] > array[k+1]) {
+                    int tmp = array[k];
+                    array[k] = array[k+1];
+                    array[k+1] = tmp;
+                }
+            }
+        }
+    }
+
     // Driver Program
     public static void main(String[] args) {
 
@@ -40,9 +63,12 @@ class BubbleSort implements SortAlgorithm {
         Integer[] integers = {4, 23, 6, 78, 1, 54, 231, 9, 12};
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(integers);
-
         // Output => 231, 78, 54, 23, 12, 9, 6, 4, 1
         print(integers);
+
+        Integer[] array = {4, 23, 6, 78, 1, 54, 231, 9, 12};
+        bubbleSort.sortDoubleFor(array);
+        print(array);
 
         // String Input
         String[] strings = {"c", "a", "e", "b", "d"};

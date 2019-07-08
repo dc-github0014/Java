@@ -8,7 +8,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
-import javax.xml.bind.DatatypeConverter;
+//import javax.xml.bind.DatatypeConverter;
 
 /**
  * This example program shows how AES encryption and decryption can be done in
@@ -32,8 +32,8 @@ public class AESEncryption {
 		String decryptedText = decryptText(cipherText, secKey);
 
 		System.out.println("Original Text:" + plainText);
-		System.out.println("AES Key (Hex Form):" + bytesToHex(secKey.getEncoded()));
-		System.out.println("Encrypted Text (Hex Form):" + bytesToHex(cipherText));
+//		System.out.println("AES Key (Hex Form):" + bytesToHex(secKey.getEncoded()));
+//		System.out.println("Encrypted Text (Hex Form):" + bytesToHex(cipherText));
 		System.out.println("Descrypted Text:" + decryptedText);
 
 	}
@@ -108,7 +108,7 @@ public class AESEncryption {
 	 *            (in binary)
 	 * @return hexHash
 	 */
-	private static String bytesToHex(byte[] hash) {
-		return DatatypeConverter.printHexBinary(hash);
-	}
+//	private static String bytesToHex(byte[] hash) {
+//		return DatatypeConverter.printHexBinary(hash);
+//	}
 }
