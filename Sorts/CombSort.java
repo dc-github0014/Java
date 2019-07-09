@@ -17,6 +17,14 @@ import static Sorts.SortUtils.*;
  * @see BubbleSort
  * @see SortAlgorithm
  */
+
+/**
+ * @author Dc
+ * 梳排序
+ * 递减率(步长)：1.3
+ * 长度除以1.3，从第0个元素开始，跟距离当前元素为步长大小的元素进行比较交换，直到比较到最后一个元素为止
+ * 将步长除以1.3，继续上述步骤
+ */
 class CombSort implements SortAlgorithm {
 
     // To find gap between elements
@@ -40,21 +48,22 @@ class CombSort implements SortAlgorithm {
         int gap = size;
 
         // Initialize swapped as true to make sure that loop runs
-        boolean swapped = true;
+        boolean swapped = true;     //int swapped = 1;
 
         // Keep running while gap is more than 1 and last iteration caused a swap
-        while (gap != 1 || swapped) {
+        while (gap != 1 || swapped) {   // swapped > 0
             // Find next gap
             gap = nextGap(gap);
 
             // Initialize swapped as false so that we can check if swap happened or not
-            swapped = false;
+            // boolean or int 都可以，用于控制是否进入下次循环。
+            swapped = false;    // swapped = 0;
 
             // Compare all elements with current gap
             for (int i = 0; i < size - gap; i++) {
                 if (less(arr[i + gap], arr[i])) {
                     // Swap arr[i] and arr[i+gap]
-                    swapped = swap(arr, i, i + gap);
+                    swapped = swap(arr, i, i + gap);   // swapped += 1 ;
                 }
             }
         }

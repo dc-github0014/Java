@@ -5,6 +5,12 @@ package Sorts;
  * @author Podshivalov Nikita (https://github.com/nikitap492)
  */
 
+/**
+ * @author Dc
+ * ╪╕н╡╬феепР
+ * ц╟ещеепР╦д╠Юё╛╢са╫╤к╥ж╠Пц╟ещеепР
+ *
+ */
 class CocktailShakerSort implements SortAlgorithm {
 
     /**
