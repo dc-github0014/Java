@@ -70,11 +70,30 @@ class CombSort implements SortAlgorithm {
         return arr;
     }
 
+    private void combSort(Integer[] array) {
+
+        int gap = array.length;
+        boolean swapped = true;
+
+        while (gap != 1 || swapped) {
+            gap = ((gap * 10) / 13) < 1 ? 1 : (gap * 10) / 13;
+            swapped = false;
+            for (int i = 0; i < array.length - gap; i ++) {
+               if (array[i+gap] < array[i]) {
+                   int swap = array[i];
+                   array[i] = array[i+gap];
+                   array[i+gap] = swap;
+                   swapped = true;
+               }
+           }
+        }
+    }
+
     // Driver method
     public static void main(String args[]) {
         CombSort ob = new CombSort();
-        Integer arr[] = {8, 4, 1, 56, 3, -44, -1, 0, 36, 34, 8, 12, -66, -78, 23, -6, 28, 0};
-        ob.sort(arr);
+        Integer[] arr = {8, 4, 1, 56, 3, -44, -1, 0, 36, 34, 8, 12, -66, -78, 23, -6, 28, 0};
+        ob.combSort(arr);
 
         System.out.println("sorted array");
         print(arr);
