@@ -6,6 +6,11 @@ package Sorts;
  * @see SortAlgorithm
  */
 
+/**
+ * @author Dc
+ * 每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置
+ * 时间复杂度 O(n * n/2) = O(n?)
+ */
 public class SelectionSort implements SortAlgorithm {
 
     /**

@@ -11,11 +11,13 @@ import static Sorts.SortUtils.*;
 /**
  * @author Dc
  * 冒泡排序
- * 从头遍历取最大(小)值进行调换位置，
+ * 从头遍历所有相邻的元素 取最大(小)值进行调换位置，
  * 遍历一次找出一个最大 (小)值放在末尾，重复以上步骤
  *
- *  do while：效率高，循环次数少
- *  for for： 外部for循环length-1次
+ *  do while：
+ *  for for：
+ *
+ *  时间复杂度：O(n * n/2) = O(n?)
  *
  */
 class BubbleSort implements SortAlgorithm {
